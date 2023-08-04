@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== FLATICON ===============-->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+
+    <!--=============== SWIPER CSS ===============-->
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+
+    <title>Ecommerce Website</title>
+  </head>
+  <body>
+    <!--=============== HEADER ===============-->
+    <header class="header">
+      <div class="header__top">
+        <div class="header__container container">
+          <div class="header__contact">
+            <span>(+84)-368-108-595</span>
+            <span> Our location</span>
+          </div>
+          <p class="header__alert-news">Super Value Deals - Save more with coupóns</p>
+          <a href="login-register.html" class="header__top-action">Login/Signup</a>
+        </div>
+      </div>
+      <nav class="nav container">
+        <a href="" class="nav__logo">
+          <img src="assets/img/logo.svg" alt="" class="nav__logo-img">
+        </a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="index.html" class="nav__link ">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="shop.html" class="nav__link active-link">Shop</a>
+            </li>
+            <li class="nav__item">
+              <a  class="nav__link" onclick="account()">My Account</a>
+            </li>
+
+            <li class="nav__item">
+              <a href="login-register.html" class="nav__link">Login</a>
+            </li>
+          </ul>
+          <div class="header__search">
+            <input type="text" placeholder="Search for items..." class="form__input">
+            <button class="search__btn">
+              <img src="assets/img/search.png" alt="">
+            </button>
+          </div>
+        </div>
+        <div class="header__user-actions">
+          <a href="" class="header__action-btn">
+            <img src="assets/img/icon-heart.svg" alt="">
+
+          </a>
+          <a href="cart.html" class="header__action-btn">
+            <img src="assets/img/icon-cart.svg" alt="">
+            <span class="count" id="cart_count"></span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!--=============== MAIN ===============-->
+    <main class="main">
+      <!--=============== BREADCRUMB ===============-->
+      <section class="breadcrumb">
+        <ul class="breadcrumb__list flex container">
+          <li><a href="index.html" class="breadcrumb__link">Home</a></li>
+          <li><span class="breadcrumb__link">></span></li>
+          <li><a href="shop.html" class="breadcrumb__link">Shop</a></li>
+          <li><span class="breadcrumb__link">></span></li>
+          <li><span class="breadcrumb__link">Cart</span></li>
+        </ul>
+      </section>
+
+      <!--=============== CART ===============-->
+      <section class="cart section--lg container">
+        <div class="table__container">
+          <table class="table">
+            <thead><tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+              <th>Remove</th>
+            </tr>
+            </thead>
+            <tbody id="tablebody"></tbody>
+            
+            
+            
+          </table>
+        </div>
+        <div class="cart__actions">
+          <a href="" class="btn flex btn--md">
+            <i class="fi-rs-shuffle"></i>Update Cart
+          </a>
+          <a href="" class="btn flex btn--md">
+            <i class="fi-rs-shopping-bag"></i>Continue Shopping
+          </a>
+        </div>
+        <div class="divider">
+          <i class="fi fi-rs-fingerprint"></i>
+        </div>
+        <div class="cart__group grid" >
+          <div >
+            
+            <div class="cart__total">
+              <h3 class="section__title" style="padding-right: 100px;">Cart totals</h3>
+              <table class="cart__total-table">
+                <tr>
+                  <td><span class="cart__total-title">Subtotal</span></td>
+                  <td><span class="cart__total-price" id="cart_total">$</span><span class="cart__total-price" >0</span></td>
+                  
+                </tr>
+                <tr>
+                  <td><span class="cart__total-title">Shipping</span></td>
+                  <td><span class="cart__total-price">$10.00</span></td>
+                  
+                </tr>
+                <tr>
+                  <td><span class="cart__total-title">Total</span></td>
+                  <td><span class="cart__total-price" id="total">$</span><span class="cart__total-price" >0</span></td>
+                  
+                </tr>
+              </table>
+              <a href="" class="btn flex btn--md">
+                <i class="fi fi-rs-box-alt"> Buy</i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+      </section>
+
+      <!--=============== NEWSLETTER ===============-->
+      <section class="newsletter"></section>
+    </main>
+
+    <!--=============== FOOTER ===============-->
+    <div style="background-color: hsl(166,23%,74%);;">
+      <footer class="footer container">
+        <div class="footer__container grid">
+          <div class="footer_content">
+            <a href="index.html" class="footer__logo">
+              <img src="assets/img/logo.svg" alt="" class="footer__logo-img">
+            </a>
+            <h4 class="footer__subtitle">Contact</h4>
+            <p class="footer__description">
+              <span>Address:</span>12 Nguyen Van Linh Road, Long Bien, Ha Noi
+            </p>
+            <p class="footer__description">
+              <span>Phone:</span>(+84)-368-108-595
+            </p>
+            <p class="footer__description">
+              <span>Hours:</span>8:00 - 21:00, Mon - Sat
+            </p>
+            <div class="footer__social">
+              <h4 class="footer__subtitle">Follow Me</h4>
+              <div class="footer__social-links">
+                <a href=""><img src="assets/img/icon-facebook.svg" alt="" class="footer__social-icon"></a>
+                <a href=""><img src="assets/img/icon-twitter.svg" alt="" class="footer__social-icon"></a>
+                <a href=""><img src="assets/img/icon-instagram.svg" alt="" class="footer__social-icon"></a>
+                <a href=""><img src="assets/img/icon-pinterest.svg" alt="" class="footer__social-icon"></a>
+                <a href=""><img src="assets/img/icon-youtube.svg" alt="" class="footer__social-icon"></a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/shop.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/login.js"></script>
+    <script>
+        let userID = 0;
+        let giohang = localStorage.getItem("giohang")
+            ? JSON.parse(localStorage.getItem("giohang"))
+            : [];
+        let cur = localStorage.getItem("currentUser")
+            ? JSON.parse(localStorage.getItem("currentUser"))
+            : [];
+        if (cur.length >0){
+            let userIdCheck = cur[0].id
+                ? cur[0].id
+                : 0;
+            userID = userIdCheck;
+        }    
+        console.log(products)
+        cart = 0
+
+
+        for (let product of products) { // Lặp trong products (DATA)
+            for (let sanpham of giohang) { // Lặp trong giỏ hàng
+                if (sanpham.id == product.id && sanpham.userID == userID) { // ID sản phẩm trong giỏ hàng bằng ID sản phẩm trong DATA
+                  let Subtotal = product.newprice*sanpham.quantity
+                  console.log(Subtotal) 
+                    let cart_item = `
+                             <tr>
+                                <td><img src="${product.image}" alt="" class="table__img"></td>
+                                <td><h3 class="table__title">${product.name}</h3></td>
+                                <td><span class="table__price">$${product.newprice}</span></td>
+                                <td style="font-size:14px"><button onclick="update_cart(${sanpham.userID},${sanpham.id},-1)"> - </button> ${sanpham.quantity} <button onclick="update_cart(${sanpham.userID},${sanpham.id},1)"> + </button></td>
+                                <td><span class="table__subtotal">$${Subtotal}</span></td>
+                                <td><button onclick="delete_cart(${sanpham.userID},${sanpham.id})"><i class="fi fi-rs-trash table__trash"></i></button></td>
+                            </tr> `
+                    document.getElementById("tablebody").innerHTML += cart_item;
+                    cart = cart + product.newprice
+                    
+                }
+              
+            }
+
+        }
+
+        total = cart + 10
+        document.getElementById("cart_total").innerHTML += cart
+        document.getElementById("total").innerHTML += total
+        function delete_cart(userID, productID) { // Function xoá sản phẩm trong giỏ hàng
+            let cart = localStorage.getItem("giohang") //khai báo biến, nếu đã có localStorage thì trả về mảng "giohang" sau khi được ép kiểu json
+                ? JSON.parse(localStorage.getItem("giohang"))
+                : [];// Nếu k có localStorage thì trả về mảng rỗng
+            let existingItem = cart.find((i) =>  i.userID == userID && i.id == productID); // Kiểm gia object có ID giống productID trong mảng "giohang"
+            if (existingItem) { //Nếu có object vừa tìm thì thực hiện:
+                cart1 = cart.filter((item) => item.userID == userID && item.id == productID);
+                cart = cart.filter((item1) => !cart1.includes(item1));               
+            }   
+            
+
+            localStorage.setItem("giohang", JSON.stringify(cart)); // Lưu lại "giohang" trong localStorage
+            location.reload(); //Reload lại trang để update dữ liệu
+
+        }                      //24      //+1
+        function update_cart(userID, productID, value) { // Cập nhật số lượng của phần tử có mã là ID với số lượng value
+            let cart = localStorage.getItem("giohang")
+                ? JSON.parse(localStorage.getItem("giohang"))
+                : [];
+            let existingItem = cart.find((item) => item.id == productID && item.userID == userID); // khai báo biến "phần tử tồn tại" 
+            if (existingItem) {
+                if (existingItem.quantity == 1 && value == -1) { // Nếu phần tử đang tìm có số lượng 1 và ta muốn giảm 1 phần tử => phần tử sẽ về 0, k tồn tại
+                    cart1 = cart.filter((item) => item.userID == userID && item.id == productID);
+                    cart = cart.filter((item1) => !cart1.includes(item1));   // Xây dựng giỏ hàng mới với các phần tử mới, khác mã phần tử vừa bỏ đi
+                } else {
+                    existingItem.quantity += value; //  nếu phần tử có số lượng khác 1 (từ 2 trở lên) thì cộng trừ thêm với số lượng mới
+                }
+            }
+            localStorage.setItem("giohang", JSON.stringify(cart));
+            location.reload();
+        }
+    </script>
+  </body>
+</html>

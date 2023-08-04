@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== FLATICON ===============-->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+
+    <!--=============== SWIPER CSS ===============-->
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <title>Ecommerce Website</title>
+  </head>
+  <body>
+    <!--=============== HEADER ===============-->
+    <header class="header">
+      <div class="header__top">
+        <div class="header__container container">
+          <div class="header__contact">
+            <span>(+84)-368-108-595</span>
+            <span> Our location</span>
+          </div>
+          <p class="header__alert-news">Super Value Deals - Save more with coupóns</p>
+          <a href="login-register.html" class="header__top-action">Login/Signup</a>
+        </div>
+      </div>
+      <nav class="nav container">
+        <a href="" class="nav__logo">
+          <img src="assets/img/logo.svg" alt="" class="nav__logo-img">
+        </a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="index.html" class="nav__link ">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="shop.html" class="nav__link active-link">Shop</a>
+            </li>
+            <li class="nav__item">
+              <a  class="nav__link" onclick="account()">My Account</a>
+            </li>
+            <li class="nav__item">
+              <a href="login-register.html" class="nav__link">Login</a>
+            </li>
+          </ul>
+          <div class="header__search">
+            <input type="text" placeholder="Search for items..." class="form__input" id="search">
+            <button class="search__btn" onclick="search1()">
+              <img src="assets/img/search.png" alt="">
+            </button>
+          </div>
+        </div>
+        <div class="header__user-actions">
+          <a href="" class="header__action-btn">
+            <img src="assets/img/icon-heart.svg" alt="">
+          </a>
+          <a href="cart.html" class="header__action-btn">
+            <img src="assets/img/icon-cart.svg" alt="">
+            <span class="count" id="cart_count"></span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!--=============== MAIN ===============-->
+    <main class="main">
+      <!--=============== BREADCRUMB ===============-->
+      <section class="breadcrumb">
+        <ul class="breadcrumb__list flex container">
+          <li><a href="index.html" class="breadcrumb__link">Home</a></li>
+          <li><span class="breadcrumb__link">></span></li>
+          <li><span class="breadcrumb__link">Shop</span></li>
+        </ul>
+      </section>
+
+      <!--=============== PRODUCTS ===============-->
+      <section class="products section--lg container">
+        <p class="total__products">We found <span id="number"></span> items for you!</p>
+        <div class="products__container grid" id="shop1">
+        </div>
+        <ul class="pagination">
+          
+          <button href="" class="pagination__link active" onclick="xemtrang(1) " id="pag1">01</button>
+          <button href="" class="pagination__link" onclick="xemtrang(2)" id="pag2">02</button>
+          
+        </ul>
+      </section>
+
+      <!--=============== NEWSLETTER ===============-->
+      <section class="newsletter"></section>
+    </main>
+
+    <!--=============== FOOTER ===============-->
+    <div style="background-color: hsl(166,23%,74%);;">
+      <footer class="footer container">
+        <div class="footer__container grid">
+          <div class="footer_content">
+            <a href="index.html" class="footer__logo">
+              <img src="assets/img/logo.svg" alt="" class="footer__logo-img">
+            </a>
+            <h4 class="footer__subtitle">Contact</h4>
+            <p class="footer__description">
+              <span>Address:</span>12 Nguyen Van Linh Road, Long Bien, Ha Noi
+            </p>
+            <p class="footer__description">
+              <span>Phone:</span>(+84)-368-108-595
+            </p>
+            <p class="footer__description">
+              <span>Hours:</span>8:00 - 21:00, Mon - Sat
+            </p>
+            <div class="footer__social">
+              <h4 class="footer__subtitle">Follow Me</h4>
+              <div class="footer__social-links">
+                <a href=""><img src="assets/img/icon-facebook.svg" alt="" class="footer__social-icon"></a>
+                <a href=""><img src="assets/img/icon-twitter.svg" alt="" class="footer__social-icon"></a>
+                <a href=""><img src="assets/img/icon-instagram.svg" alt="" class="footer__social-icon"></a>
+                <a href=""><img src="assets/img/icon-pinterest.svg" alt="" class="footer__social-icon"></a>
+                <a href=""><img src="assets/img/icon-youtube.svg" alt="" class="footer__social-icon"></a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/shop.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/login.js"></script>
+    <script>
+      function search1(){
+        console.log(products)
+      let valueSearchInput = document.getElementById("search").value
+        let userSearch = products.filter(value =>{
+          return value.name.toUpperCase().includes(valueSearchInput.toUpperCase)
+        })
+        products(userSearch)
+    }
+    function products(){
+      for (let product of products) { // cú pháp chèn biến ${biến}
+        if (userSearch.name == product.name){
+
+        
+        let card = /*html*/ `
+        <div class="product__item">
+        <div class="product__banner">
+          <button onclick="xemchitiet(${product.id})" class="product__images">
+            <img src="${product.image}" alt="" class="product__img default">
+          </button>
+          <div class="product__badge light-pink">Hot</div>
+          
+        </div>
+        <div class="product__content">
+          <span class="product__category">${product.type}</span>
+          <a href="details.html">
+            <h3 class="product__title">${product.name}</h3>
+          </a>
+          <div class="product__rating">
+            <i class="fi fi-rs-star"></i>
+            <i class="fi fi-rs-star"></i>
+            <i class="fi fi-rs-star"></i>
+            <i class="fi fi-rs-star"></i>
+            <i class="fi fi-rs-star"></i>
+          </div>
+          <div class="product__price flex">
+            <span class="new__price">${product.newprice}</span>
+            <span class="old__price">${product.oldprice}</span>
+          </div>
+          <button href="" class="action__btn cart__btn" aria-label="Add To Cart " onclick="checktoAddCart(${product.id})">
+            <i class="fi fi-rs-shopping-bag-add"></i>
+          </button>
+    
+        </div>
+      </div>
+      `; // function addToCart (ID) {}
+        document.getElementById("shop1").innerHTML += card;
+    }
+  }
+}
+  
+
+    </script>
+  </body>
+</html>
